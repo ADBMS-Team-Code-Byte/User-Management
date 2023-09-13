@@ -58,7 +58,63 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/users/get/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"get",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14f-2znytwZzkYrpDfwUj62vZ8Izhao\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 12:19:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"userId\": 18,\n        \"FirstName\": \"Dave\",\n        \"LastName\": \"Johnson\",\n        \"Email\": \"daveJohnson@gmail.com\",\n        \"PhoneNumber\": \"766324527\"\n    },\n    {\n        \"userId\": 19,\n        \"FirstName\": \"Crimston\",\n        \"LastName\": \"Smith\",\n        \"Email\": \"crimstonSmith@gmail.com\",\n        \"PhoneNumber\": \"079652432\"\n    },\n    {\n        \"userId\": 20,\n        \"FirstName\": \"Mark\",\n        \"LastName\": \"Jane\",\n        \"Email\": \"markJane@gmail.com\",\n        \"PhoneNumber\": \"096352722\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "get",
@@ -113,7 +169,63 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/users/get/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"get",
+								"18"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a1-iN2uFFMx85s/CGYKGDRcaqpQXhQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 12:20:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User  Retrieved successfully\",\n    \"user\": {\n        \"userId\": 18,\n        \"FirstName\": \"Dave\",\n        \"LastName\": \"Johnson\",\n        \"Email\": \"daveJohnson@gmail.com\",\n        \"PhoneNumber\": \"766324527\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "create",
@@ -176,7 +288,71 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FirstName\":\"Anne\",\r\n    \"LastName\":\"Chopra\",\r\n    \"Email\":\"anneChopra@gmail.com\",\r\n    \"PhoneNumber\":\"446787898\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9c-wrgAgHSDrsIivw9NV0GLKJ+YbiU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 12:23:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User created Successfully\",\n    \"user\": {\n        \"userId\": 21,\n        \"FirstName\": \"Anne\",\n        \"LastName\": \"Chopra\",\n        \"Email\": \"anneChopra@gmail.com\",\n        \"PhoneNumber\": \"446787898\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "update",
@@ -239,7 +415,71 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "update",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":19,\r\n    \"FirstName\":\"Tom\",\r\n    \"LastName\":\"Holland\",\r\n    \"Email\":\"tomHollandh@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/users/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "172"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ac-+4QGwsISb1wHwrrZ5agFrEoJY3Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 12:23:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User details updated successfully\",\n    \"updatedUser\": {\n        \"userId\": 19,\n        \"FirstName\": \"Tom\",\n        \"LastName\": \"Holland\",\n        \"Email\": \"tomHollandh@gmail.com\",\n        \"PhoneNumber\": \"079652432\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "delete",
@@ -288,7 +528,71 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/users/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-XfcINSSgfabDxGSKtlNiiTF6cZw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 12:24:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User removed successfully\"\n}"
+				}
+			]
 		}
 	]
 }
