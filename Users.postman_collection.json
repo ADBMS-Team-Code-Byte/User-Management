@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "ec7c6d56-1410-44e1-a514-1d46571a5921",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25125664"
+	},
+	"item": [
+		{
+			"name": "get all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// check if the response status is 200 (OK)\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// check if the response contains an array of users\r",
+							"pm.test(\"Response should contain an array of users\", function () {\r",
+							"    const users = pm.response.json();\r",
+							"    pm.expect(users).to.be.an('array');\r",
+							"    pm.expect(users.length).to.be.above(0); // check whether there is atleast one user\r",
+							"});\r",
+							"\r",
+							"// check if each user object in the response has the required fields \r",
+							"pm.test(\"Each user object should have required fields\", function () {\r",
+							"    const users = pm.response.json();\r",
+							"    users.forEach(function(user) {\r",
+							"        pm.expect(user).to.have.property('FirstName');\r",
+							"        pm.expect(user).to.have.property('LastName');\r",
+							"        pm.expect(user).to.have.property('Email');\r",
+							"        pm.expect(user).to.have.property('PhoneNumber');\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/users/get/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// check if the response status is 200 (OK)\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// check if the response contains a message property\r",
+							"pm.test(\"Response should have a 'message' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('message');\r",
+							"});\r",
+							"\r",
+							"// check if the response contains a user property\r",
+							"pm.test(\"Response should have a 'user' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('user');\r",
+							"});\r",
+							"\r",
+							"// check if the user property has the required fields \r",
+							"pm.test(\"User object should have required fields\", function () {\r",
+							"    const user = pm.response.json().user;\r",
+							"    pm.expect(user).to.have.property('FirstName');\r",
+							"    pm.expect(user).to.have.property('LastName');\r",
+							"    pm.expect(user).to.have.property('Email');\r",
+							"    pm.expect(user).to.have.property('PhoneNumber');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/users/get/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"get",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// check if the response status is 201 (Created)\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"// check if the response contains a message property\r",
+							"pm.test(\"Response should have a 'message' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('message');\r",
+							"});\r",
+							"\r",
+							"// check if the response contains a user property\r",
+							"pm.test(\"Response should have a 'user' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('user');\r",
+							"});\r",
+							"\r",
+							"// check if the user property has the required fields\r",
+							"pm.test(\"User object should have required fields\", function () {\r",
+							"    const user = pm.response.json().user;\r",
+							"    pm.expect(user).to.have.property('FirstName');\r",
+							"    pm.expect(user).to.have.property('LastName');\r",
+							"    pm.expect(user).to.have.property('Email');\r",
+							"    pm.expect(user).to.have.property('PhoneNumber');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\":\"Anne\",\r\n    \"LastName\":\"Chopra\",\r\n    \"Email\":\"anneChopra@gmail.com\",\r\n    \"PhoneNumber\":\"446787898\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// check if the response status is 200 (OK)\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// check if the response contains a message property\r",
+							"pm.test(\"Response should have a 'message' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('message');\r",
+							"});\r",
+							"\r",
+							"// check if the response contains an updatedUser property\r",
+							"pm.test(\"Response should have an 'updatedUser' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('updatedUser');\r",
+							"});\r",
+							"\r",
+							"// check if the 'updatedUser' property has the required fields\r",
+							"pm.test(\"Updated user object should have required fields\", function () {\r",
+							"    const updatedUser = pm.response.json().updatedUser;\r",
+							"    pm.expect(updatedUser).to.have.property('FirstName');\r",
+							"    pm.expect(updatedUser).to.have.property('LastName');\r",
+							"    pm.expect(updatedUser).to.have.property('Email');\r",
+							"    pm.expect(updatedUser).to.have.property('PhoneNumber');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":19,\r\n    \"FirstName\":\"Tom\",\r\n    \"LastName\":\"Holland\",\r\n    \"Email\":\"tomHollandh@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check if the response status is 200 (OK)\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check if the response contains a 'message' property\r",
+							"pm.test(\"Response should have a 'message' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('message');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
